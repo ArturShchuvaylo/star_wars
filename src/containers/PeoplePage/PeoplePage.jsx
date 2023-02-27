@@ -5,6 +5,8 @@ import { API_PEOPLE } from "../../constans/api";
 import style from './PeoplePage.module.css';
 
 
+
+
 const PeoplePage = () => {
 
     const [people, setPeople] = useState([]);
