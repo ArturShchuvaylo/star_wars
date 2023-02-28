@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import './App.module.css'
+import styles from './App.module.css'
 import PeoplePage from '../PeoplePage';
 
 function App() {
