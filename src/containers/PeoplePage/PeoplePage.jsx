@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
+
+import { withApiError } from "@hoc-helpers/withApiError";
+import PeopleList from "@components/PeoplePage/PeopleList";
 
 import { getApiResource } from "@utils/network";
 import { HTTPS, API_PEOPLE } from "@constans/api";
 import { getPeopleId, getPeopleImage } from "@services/getPeopleData";
-import PeopleList from "@components/PeoplePage/PeopleList";
-import { withApiError } from "@hoc-helpers/withApiError";
 
 import style from './PeoplePage.module.css';
-
 
 const PeoplePage = ({ setApiError }) => {
     const [people, setPeople] = useState([]);
@@ -41,6 +42,10 @@ const PeoplePage = ({ setApiError }) => {
             <PeopleList people={people} />
         </>
     );
+}
+
+PeoplePage.propTypes = {
+    setApiError: PropTypes.func
 }
 
 export default withApiError(PeoplePage);
